@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { Settings, EyeOff, Lock, User, Github } from 'lucide-react'
+import { Settings } from 'lucide-react'
+// import { EyeOff, Lock, User, Github } from 'lucide-react'
 
 const steps = [
     { num: "1", title: "From scan to structured contact", desc: "Detect & Align ,Gemini OCR ,Actionable Contact.", active: true },

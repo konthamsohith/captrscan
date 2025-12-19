@@ -1,4 +1,4 @@
-import { Apple, Play } from 'lucide-react'
+// import { Apple, Play } from 'lucide-react'
 
 export function CTA() {
     return (
