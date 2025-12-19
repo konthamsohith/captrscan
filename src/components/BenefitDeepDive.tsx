@@ -55,7 +55,7 @@ export function BenefitDeepDive() {
                 <div className="flex flex-col gap-8 pb-24">
                     {cards.map((card, i) => {
                         const targetScale = 1 - ((cards.length - i) * 0.05);
-                        return <StickyCard key={i} index={i} total={cards.length} {...card} progress={scrollYProgress} range={[i * 0.25, 1]} targetScale={targetScale} />
+                        return <StickyCard key={i} index={i} {...card} progress={scrollYProgress} range={[i * 0.25, 1]} targetScale={targetScale} />
                     })}
                 </div>
             </div>
