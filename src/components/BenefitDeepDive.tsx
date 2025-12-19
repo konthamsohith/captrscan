@@ -65,7 +65,7 @@ export function BenefitDeepDive() {
 
 interface CardProps {
     index: number;
-    total: number;
+    // total removed
     tag: string;
     title: string;
     desc: string;
@@ -76,7 +76,7 @@ interface CardProps {
     targetScale: number;
 }
 
-function StickyCard({ index, total, tag, title, desc, points, visual, progress, range, targetScale }: CardProps) {
+function StickyCard({ index, tag, title, desc, points, visual, progress, range, targetScale }: CardProps) {
     const scale = useTransform(progress, range, [1, targetScale]);
 
     return (

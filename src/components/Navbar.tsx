@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { cn } from '../lib/utils'
 
 export function Navbar() {
@@ -36,7 +36,7 @@ export function Navbar() {
                             { name: "Pricing", active: false },
                             { name: "Blog", active: false },
                             { name: "All pages", active: false },
-                        ].map((link, i) => (
+                        ].map((link, _i) => (
                             <a
                                 key={link.name}
                                 href={`#${link.name.toLowerCase()}`}

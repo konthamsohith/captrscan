@@ -71,7 +71,7 @@ export function Pricing() {
     )
 }
 
-function PricingCard({ tag, price, period, plan, desc, features, variant, gradient, buttonText }: any) {
+function PricingCard({ tag, price, period, plan, desc, features, gradient, buttonText }: any) {
     return (
         <div className="rounded-[2.5rem] overflow-hidden flex flex-col group hover:-translate-y-2 transition-transform duration-300 shadow-xl shadow-blue-900/5">
             {/* Header (Blue) */}
