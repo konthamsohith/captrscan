@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Sparkles, Zap, Layers, Crop, ScanLine, Brain, Search, FileDown, Share2, Tags, ListFilter, MessageSquare, Send } from 'lucide-react'
+import { Sparkles, Zap, Layers, Crop, ScanLine, Brain, Search, FileDown, Share2, Tags, ListFilter, Send } from 'lucide-react'
 
 export function Features() {
     return (

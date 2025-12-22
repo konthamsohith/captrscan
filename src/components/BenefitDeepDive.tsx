@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
-import { Check, Star, Fingerprint } from 'lucide-react'
+import { Check, Star } from 'lucide-react'
 
 // Define the content for each card
 const cards = [
@@ -115,7 +115,7 @@ function StickyCard({ index, tag, title, desc, points, visual, progress, range, 
     )
 }
 
-import { User, Phone, Mail, ArrowUpRight, Zap, Folder, FileText } from 'lucide-react'
+import { User, Phone, Mail, Zap, Folder } from 'lucide-react'
 
 function VisualComponent({ type }: { type: string }) {
     // 1. SCAN Visual: Dynamic scanning process
