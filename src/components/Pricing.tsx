@@ -16,7 +16,7 @@ export function Pricing() {
                     </div>
                     <h2 className="font-['Poppins'] font-normal text-[64px] leading-[72px] text-[rgb(0,0,0)] tracking-tight mb-8">
                         Try For Free And<br />
-                        <span className="text-[rgb(0,64,193)]">Start Controlling Your Finances</span>
+                        <span className="text-[rgb(0,64,193)]">Start Controlling Your Business</span>
                     </h2>
 
                     {/* Tabs Removed - displaying plans directly */}

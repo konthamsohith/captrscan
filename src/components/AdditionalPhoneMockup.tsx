@@ -1,19 +1,19 @@
 import { motion } from 'framer-motion'
 // import { ArrowUpRight, ArrowDownLeft, RefreshCw, Smartphone, CreditCard, BarChart2, User, Home } from 'lucide-react'
 
-export function PhoneMockups() {
+export function AdditionalPhoneMockup() {
     return (
-        <div className="relative mx-auto w-[320px] h-[640px] border-gray-800 bg-gray-900 border-[12px] rounded-[3rem] shadow-2xl overflow-hidden ring-1 ring-gray-900/50">
+        <div className="relative mx-auto w-[280px] h-[570px] bg-black rounded-[3rem] shadow-[0_0_0_11px_#171717,0_0_0_12px_#000000,0_25px_50px_-12px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-gray-900/50">
             {/* Dynamic Island / Notch */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[26px] w-[100px] bg-black rounded-b-[16px] z-50"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[24px] w-[90px] bg-black rounded-b-[16px] z-50"></div>
 
             {/* Side Buttons */}
-            <div className="h-[32px] w-[3px] bg-gray-600 absolute -start-[15px] top-[100px] rounded-s-lg"></div>
-            <div className="h-[46px] w-[3px] bg-gray-600 absolute -start-[15px] top-[150px] rounded-s-lg"></div>
-            <div className="h-[64px] w-[3px] bg-gray-600 absolute -end-[15px] top-[180px] rounded-e-lg"></div>
+            <div className="h-[28px] w-[3px] bg-gray-900 absolute -start-[14px] top-[90px] rounded-s-lg"></div>
+            <div className="h-[40px] w-[3px] bg-gray-900 absolute -start-[14px] top-[135px] rounded-s-lg"></div>
+            <div className="h-[56px] w-[3px] bg-gray-900 absolute -end-[14px] top-[160px] rounded-e-lg"></div>
 
             {/* Screen Content: Scanning UI */}
-            <div className="w-full h-full bg-black relative overflow-hidden rounded-[2.3rem]">
+            <div className="w-full h-full bg-black relative overflow-hidden rounded-[3rem]">
                 {/* Camera View Placeholder (Simulated) */}
                 <div className="absolute inset-0 bg-gray-900">
                     {/* Background blurred elements to simulate camera view */}
@@ -46,22 +46,49 @@ export function PhoneMockups() {
                         {/* ID Card Simulation */}
                         <div className="absolute inset-2 bg-white rounded-xl shadow-lg p-3 flex flex-col justify-between">
                             <div className="flex justify-between items-start">
-                                <div className="w-8 h-8 rounded-full bg-blue-100"></div>
-                                <div className="w-16 h-2 bg-gray-100 rounded"></div>
+                                <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <div className="w-4 h-4 bg-blue-600 rounded-full"></div>
+                                </div>
+                                <div className="text-[8px] font-bold text-blue-600 tracking-wider">ID CARD</div>
                             </div>
-                            <div className="space-y-2">
-                                <div className="w-24 h-3 bg-gray-800 rounded"></div>
-                                <div className="w-32 h-2 bg-gray-200 rounded"></div>
-                                <div className="w-20 h-2 bg-gray-200 rounded"></div>
+                            <div className="space-y-2 relative z-10">
+                                <div className="w-24 h-3 bg-gray-900 rounded-sm"></div>
+                                <div className="w-32 h-2 bg-gray-300 rounded-sm"></div>
+                                <div className="w-20 h-2 bg-gray-300 rounded-sm"></div>
                             </div>
                         </div>
 
-                        {/* Scanning Laser */}
-                        <motion.div
-                            className="absolute top-0 left-0 right-0 h-1 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] z-20"
-                            animate={{ top: ['0%', '100%', '0%'] }}
-                            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                        />
+                        {/* Scanning Laser Effect */}
+                        <div className="absolute inset-0 z-30 overflow-hidden rounded-xl pointer-events-none">
+                            <motion.div
+                                className="absolute left-0 right-0 h-24 bg-gradient-to-b from-blue-500/0 via-blue-500/20 to-blue-400/0 border-b-[2px] border-blue-400 shadow-[0_0_20px_rgba(96,165,250,0.6)]"
+                                animate={{ top: ['-20%', '120%'] }}
+                                transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop", ease: "linear" }}
+                            >
+                                <div className="w-full h-full bg-[size:3px_3px] bg-[radial-gradient(rgba(59,130,246,0.3)_1px,transparent_0)]"></div>
+                            </motion.div>
+                        </div>
+
+                        {/* OCR Bounding Boxes */}
+                        <div className="absolute inset-0 z-20 pointer-events-none p-5 flex flex-col justify-end pb-3">
+                            <div className="space-y-2">
+                                <motion.div
+                                    animate={{ opacity: [0, 1, 0] }}
+                                    transition={{ duration: 1.5, repeat: Infinity, times: [0, 0.5, 1], delay: 0.1 }}
+                                    className="w-24 h-4 border border-blue-500/50 bg-blue-500/10 rounded ml-[-2px] mb-[-4px]"
+                                />
+                                <motion.div
+                                    animate={{ opacity: [0, 1, 0] }}
+                                    transition={{ duration: 1.5, repeat: Infinity, times: [0, 0.5, 1], delay: 0.3 }}
+                                    className="w-32 h-3 border border-blue-500/50 bg-blue-500/10 rounded ml-[-2px]"
+                                />
+                                <motion.div
+                                    animate={{ opacity: [0, 1, 0] }}
+                                    transition={{ duration: 1.5, repeat: Infinity, times: [0, 0.5, 1], delay: 0.5 }}
+                                    className="w-20 h-3 border border-blue-500/50 bg-blue-500/10 rounded ml-[-2px]"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
 

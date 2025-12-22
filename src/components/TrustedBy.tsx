@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Hexagon, Circle, Triangle, Square, Disc, Box } from 'lucide-react'
+import { Cloud, Share2, Home, Briefcase, Globe, Building2 } from 'lucide-react'
 
 export function TrustedBy() {
     return (
@@ -24,13 +24,19 @@ export function TrustedBy() {
                             Partnering with top-tier brands to transform how teams capture and act on contacts.
                         </h2>
 
-                        <div className="flex flex-wrap justify-center gap-12 lg:gap-16 opacity-80 mix-blend-overlay">
-                            <div className="flex items-center gap-2"><Hexagon className="w-8 h-8 fill-current" /><span className="text-xl font-bold">Logoipsum</span></div>
-                            <div className="flex items-center gap-2"><Circle className="w-8 h-8" /><span className="text-xl font-bold">logo ipsum</span></div>
-                            <div className="flex items-center gap-2"><Triangle className="w-8 h-8 fill-current" /><span className="text-xl font-bold">Logoipsum</span></div>
-                            <div className="flex items-center gap-2"><Square className="w-8 h-8 rotate-45 fill-current" /><span className="text-xl font-bold">Logoipsum</span></div>
-                            <div className="flex items-center gap-2"><Disc className="w-8 h-8" /><span className="text-xl font-bold">IPSUM</span></div>
-                            <div className="flex items-center gap-2"><Box className="w-8 h-8 fill-current" /><span className="text-xl font-bold">L-ipsum</span></div>
+                        <div className="flex flex-wrap justify-center gap-12 lg:gap-16 opacity-80 items-center">
+                            {/* Salesforce */}
+                            <div className="flex items-center gap-2"><Cloud className="w-8 h-8 fill-current" /><span className="text-xl font-bold tracking-tight">Salesforce</span></div>
+                            {/* HubSpot */}
+                            <div className="flex items-center gap-2"><Share2 className="w-7 h-7" /><span className="text-xl font-bold tracking-tight">HubSpot</span></div>
+                            {/* RE/MAX */}
+                            <div className="flex items-center gap-2"><Home className="w-7 h-7 fill-current" /><span className="text-xl font-bold tracking-tight">RE/MAX</span></div>
+                            {/* Deloitte */}
+                            <div className="flex items-center gap-2"><Briefcase className="w-7 h-7 fill-current" /><span className="text-xl font-bold tracking-tight">Deloitte</span></div>
+                            {/* CBRE */}
+                            <div className="flex items-center gap-2"><Globe className="w-7 h-7" /><span className="text-xl font-bold tracking-tight">CBRE</span></div>
+                            {/* Oracle */}
+                            <div className="flex items-center gap-2"><Building2 className="w-7 h-7 fill-current" /><span className="text-xl font-bold tracking-tight">Oracle</span></div>
                         </div>
                     </div>
 

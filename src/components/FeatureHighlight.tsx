@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Camera, Save, Zap, Share2 } from 'lucide-react'
 
 
 export function FeatureHighlight() {
@@ -35,40 +36,64 @@ export function FeatureHighlight() {
 
                 {/* Floating Icons */}
 
-                {/* Top Left: Piggy Bank */}
+                {/* Top Left: Scan */}
                 <motion.div
-                    animate={{ y: [0, -20, 0] }}
-                    transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                    className="absolute top-0 left-0 lg:left-20 bg-purple-100 rounded-[3rem] px-8 py-4 shadow-lg hidden lg:block"
+                    animate={{ y: [0, -15, 0] }}
+                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                    className="absolute top-0 left-0 lg:left-10 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:flex items-center gap-3"
                 >
-                    <div className="text-4xl">🐷</div>
+                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                        <Camera className="w-5 h-5" />
+                    </div>
+                    <div>
+                        <div className="text-sm font-semibold text-gray-900">Instant Scan</div>
+                        <div className="text-xs text-gray-500">AI-powered OCR</div>
+                    </div>
                 </motion.div>
 
-                {/* Top Right: Clock */}
+                {/* Top Right: Save */}
                 <motion.div
-                    animate={{ y: [0, 20, 0] }}
-                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1 }}
-                    className="absolute top-10 right-0 lg:right-20 bg-blue-50 rounded-[3rem] px-8 py-4 shadow-lg hidden lg:block"
+                    animate={{ y: [0, 15, 0] }}
+                    transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
+                    className="absolute top-10 right-0 lg:right-10 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:flex items-center gap-3"
                 >
-                    <div className="text-4xl">⏰</div>
+                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                        <Save className="w-5 h-5" />
+                    </div>
+                    <div>
+                        <div className="text-sm font-semibold text-gray-900">Auto Save</div>
+                        <div className="text-xs text-gray-500">Cloud Storage</div>
+                    </div>
                 </motion.div>
 
-                {/* Bottom Left: Coins */}
+                {/* Bottom Left: Act */}
                 <motion.div
-                    animate={{ rotate: [0, 5, 0] }}
-                    transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-                    className="absolute bottom-0 left-10 lg:left-32 w-48 h-32 rounded-[2rem] overflow-hidden shadow-2xl hidden lg:block transform -rotate-12 bg-white"
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
+                    className="absolute bottom-10 left-10 lg:left-24 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:flex items-center gap-3"
                 >
-                    <img src="https://images.unsplash.com/photo-1621504450168-38c6814c1958?auto=format&fit=crop&q=80&w=400" alt="Coins" className="w-full h-full object-cover" />
+                    <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                        <Zap className="w-5 h-5" />
+                    </div>
+                    <div>
+                        <div className="text-sm font-semibold text-gray-900">Quick Actions</div>
+                        <div className="text-xs text-gray-500">Call & Email</div>
+                    </div>
                 </motion.div>
 
-                {/* Bottom Right: Abstract */}
+                {/* Bottom Right: Connect */}
                 <motion.div
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                    className="absolute bottom-10 right-10 lg:right-32 bg-pink-100 rounded-[3rem] px-8 py-6 shadow-lg hidden lg:block"
+                    className="absolute bottom-20 right-10 lg:right-32 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:flex items-center gap-3"
                 >
-                    <div className="flex gap-2 text-2xl">📦 💎</div>
+                    <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
+                        <Share2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                        <div className="text-sm font-semibold text-gray-900">Connect</div>
+                        <div className="text-xs text-gray-500">Grow Network</div>
+                    </div>
                 </motion.div>
 
             </div>

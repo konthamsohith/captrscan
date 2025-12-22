@@ -30,16 +30,16 @@ export function Navbar() {
                     {/* Centered Links (Desktop) */}
                     <div className="hidden lg:flex items-center bg-gray-100/50 rounded-full px-2 py-1.5 backdrop-blur-sm border border-gray-100">
                         {[
-                            { name: "Home", active: true },
-                            { name: "Features", active: false },
-                            { name: "About", active: false },
-                            { name: "Pricing", active: false },
-                            { name: "Blog", active: false },
-                            { name: "All pages", active: false },
-                        ].map((link, _i) => (
+                            { name: "Home", href: "#home" },
+                            { name: "Features", href: "#features" },
+                            { name: "Benefit", href: "#benefit" },
+                            { name: "About", href: "#about" },
+                            { name: "Testimonials", href: "#testimonials" },
+                            { name: "Pricing", href: "#pricing" },
+                        ].map((link) => (
                             <a
                                 key={link.name}
-                                href={`#${link.name.toLowerCase()}`}
+                                href={link.href}
                                 className="font-['Poppins'] font-normal text-[16px] leading-normal text-[rgba(0, 0, 0, 1)] px-4 py-2 rounded-full hover:bg-white/80 transition-colors"
                             >
                                 {link.name}
@@ -50,9 +50,9 @@ export function Navbar() {
                     {/* Right Button */}
                     <div className="hidden lg:block">
                         {/* CTA Button */}
-                        <button className="bg-white font-['Poppins'] font-normal text-[16px] leading-normal text-[rgb(0,0,238)] px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors shadow-lg shadow-blue-100/50">
+                        <a href="#download" className="bg-white font-['Poppins'] font-normal text-[16px] leading-normal text-[rgb(0,0,238)] px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors shadow-lg shadow-blue-100/50 inline-block">
                             Start Free
-                        </button>
+                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -79,11 +79,12 @@ export function Navbar() {
                                 </button>
                             </div>
                             <div className="flex flex-col gap-6 text-lg font-medium">
-                                <a href="#" className="text-blue-600">Home</a>
-                                <a href="#">Features</a>
-                                <a href="#">About</a>
-                                <a href="#">Pricing</a>
-                                <a href="#">Blog</a>
+                                <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="text-blue-600">Home</a>
+                                <a href="#features" onClick={() => setIsMobileMenuOpen(false)}>Features</a>
+                                <a href="#benefit" onClick={() => setIsMobileMenuOpen(false)}>Benefit</a>
+                                <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+                                <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)}>Testimonials</a>
+                                <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>
                             </div>
                         </div>
                     </motion.div>

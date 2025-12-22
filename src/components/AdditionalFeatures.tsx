@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { PhoneMockups } from './PhoneMockups'
+import { AdditionalPhoneMockup } from './AdditionalPhoneMockup'
 import { PieChart, Ticket, TrendingUp, Receipt, FileText } from 'lucide-react'
 
 const features = [
@@ -72,7 +72,7 @@ export function AdditionalFeatures() {
                     <motion.div
                         className="relative z-10 scale-90 md:scale-100 origin-center"
                     >
-                        <PhoneMockups />
+                        <AdditionalPhoneMockup />
                     </motion.div>
                 </div>
 

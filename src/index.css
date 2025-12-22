@@ -6,6 +6,7 @@
 @layer base {
     html {
         font-family: 'Outfit', sans-serif;
+        scroll-behavior: smooth;
     }
 }
 
@@ -16,7 +17,7 @@ html.lenis body {
 }
 
 .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {

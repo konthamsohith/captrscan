@@ -9,24 +9,24 @@ const cards = [
         title: "Save time with fast, accurate scanning.",
         desc: "Automate scanning, extraction, and follow-ups—freeing your time for what matters most..",
         points: ['Stay on top of every scan.', 'Automate scanning for less effort.'],
-        visual: "activity",
-        color: "bg-blue-50"
+        visual: "scan",
+        color: "bg-gray-50"
     },
     {
         tag: "SAVE",
         title: "Take control of how you save and organize contacts.",
         desc: "Gain clear insights into your saved contacts, helping you stay organized and act faster.",
         points: ['Build a smarter contact library.', 'Make informed decisions with saved contacts.'],
-        visual: "growth",
-        color: "bg-indigo-50"
+        visual: "save",
+        color: "bg-gray-50"
     },
     {
         tag: "ACT",
         title: "Experience the confidence of taking action instantly.",
         desc: "Protect your contact data while taking action with confidence.",
         points: ['Act securely on every contact.', 'Confidence in every action.'],
-        visual: "security",
-        color: "bg-purple-50"
+        visual: "act",
+        color: "bg-gray-50"
     }
 ]
 
@@ -38,7 +38,7 @@ export function BenefitDeepDive() {
     })
 
     return (
-        <section className="py-24 bg-white" ref={container}>
+        <section id="benefit" className="py-24 bg-white" ref={container}>
             <div className="container mx-auto px-4">
 
                 {/* Header */}
@@ -46,7 +46,7 @@ export function BenefitDeepDive() {
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100 font-['Poppins'] font-normal text-[14px] leading-[20px] text-[rgb(0,64,193)] mb-6 bg-white shadow-sm">
                         <Star className="w-3 h-3 fill-current" /> Benefit
                     </div>
-                    <h2 className="font-['Poppins'] font-normal text-[64px] leading-[72px] text-[rgb(21,21,21)] tracking-tight">
+                    <h2 className="font-['Poppins'] font-normal text-4xl lg:text-[64px] lg:leading-[72px] text-[rgb(21,21,21)] tracking-tight">
                         Experience The<br />
                         <span className="text-[rgb(0,64,193)]">Future of Contact Capture</span>
                     </h2>
@@ -65,7 +65,6 @@ export function BenefitDeepDive() {
 
 interface CardProps {
     index: number;
-    // total removed
     tag: string;
     title: string;
     desc: string;
@@ -81,24 +80,23 @@ function StickyCard({ index, tag, title, desc, points, visual, progress, range, 
 
     return (
         <div
-            className="sticky top-32 w-full h-screen flex items-center justify-center sticky-card-container"
+            className="sticky top-24 lg:top-32 w-full min-h-[600px] lg:h-screen flex items-center justify-center sticky-card-container mb-12 lg:mb-0"
             style={{
                 zIndex: index + 1,
-                marginBottom: -100 // Adjust margin to create overlap or spacing
             }}
         >
             <motion.div
                 style={{ scale, top: `calc(10vh + ${index * 25}px)` }} // Adjust top for stacking visual
-                className="bg-white rounded-[3rem] p-8 lg:p-12 shadow-2xl border border-gray-100 w-full max-w-6xl relative" // Removed flex items-center and min-h-[600px]
+                className="bg-white rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-12 shadow-2xl border border-gray-100 w-full max-w-6xl relative"
             >
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center w-full">
                     {/* Visual */}
                     <VisualComponent type={visual} />
 
                     {/* Content */}
                     <div>
                         <div className="font-['Poppins'] font-normal text-[16px] leading-[24px] text-[rgb(0,64,193)] mb-4">• {tag}</div>
-                        <h3 className="font-['Poppins'] font-medium text-[36px] leading-[48px] text-[rgb(21,21,21)] mb-6 ">{title}</h3>
+                        <h3 className="font-['Poppins'] font-medium text-3xl lg:text-[36px] lg:leading-[48px] text-[rgb(21,21,21)] mb-6 ">{title}</h3>
                         <p className="font-['Poppins'] font-normal text-[18px] leading-[28px] text-[rgb(128,128,128)] mb-8">{desc}</p>
                         <ul className="space-y-4">
                             {points.map((item: string, i: number) => (
@@ -117,61 +115,160 @@ function StickyCard({ index, tag, title, desc, points, visual, progress, range, 
     )
 }
 
+import { User, Phone, Mail, ArrowUpRight, Zap, Folder, FileText } from 'lucide-react'
+
 function VisualComponent({ type }: { type: string }) {
-    if (type === 'activity') return (
-        <div className="bg-blue-300/20 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden aspect-square flex items-center justify-center">
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
-            <div className="bg-white rounded-[2rem] p-6 w-full max-w-sm shadow-xl relative z-10">
-                <div className="flex justify-between items-center mb-6">
-                    <h4 className="font-bold text-lg">Activity</h4>
-                    <span className="text-xs text-gray-400 border px-2 py-1 rounded-md">Month ▾</span>
+    // 1. SCAN Visual: Dynamic scanning process
+    if (type === 'scan') return (
+        <div className="bg-blue-600/5 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden aspect-square flex items-center justify-center border border-blue-100/50">
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
+
+            <div className="relative w-64 h-80 bg-white rounded-2xl shadow-xl p-4 flex flex-col border border-gray-100 z-10">
+                {/* Simulated Document */}
+                <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-gray-100"></div>
+                    <div className="space-y-1">
+                        <div className="w-24 h-2 bg-gray-200 rounded"></div>
+                        <div className="w-16 h-2 bg-gray-100 rounded"></div>
+                    </div>
                 </div>
-                <div className="relative h-40 w-full flex items-end justify-center mb-6 overflow-hidden">
-                    <div className="absolute w-52 h-52 border-[24px] border-blue-100 rounded-full top-0 box-border"></div>
-                    <div className="absolute w-52 h-52 border-[24px] border-transparent border-t-blue-500 border-l-indigo-500 rounded-full top-0 rotate-[-45deg] box-border"></div>
-                    <div className="absolute bottom-6 flex flex-col items-center"><span className="text-3xl font-bold text-gray-900">75%</span></div>
+                <div className="space-y-2 mb-4">
+                    <div className="w-full h-2 bg-gray-100 rounded"></div>
+                    <div className="w-full h-2 bg-gray-100 rounded"></div>
+                    <div className="w-2/3 h-2 bg-gray-100 rounded"></div>
                 </div>
+
+                {/* AI Extracted Data Overlay */}
+                <div className="mt-auto space-y-2">
+                    <div className="flex items-center gap-2 p-2 bg-blue-50 rounded-lg border border-blue-100">
+                        <User className="w-4 h-4 text-blue-600" />
+                        <span className="text-xs font-medium text-blue-900">Name Identified</span>
+                    </div>
+                    <div className="flex items-center gap-2 p-2 bg-slate-50 rounded-lg border border-slate-200">
+                        <Mail className="w-4 h-4 text-slate-600" />
+                        <span className="text-xs font-medium text-slate-900">Email Extracted</span>
+                    </div>
+                </div>
+
+                {/* Scanning Beam */}
+                <motion.div
+                    className="absolute left-0 right-0 h-1 bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.5)] z-20"
+                    animate={{ top: ['0%', '100%', '0%'] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                />
+            </div>
+        </div>
+    )
+
+    // 2. SAVE Visual: Organized Folders / Library
+    if (type === 'save') return (
+        <div className="bg-indigo-300/20 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden aspect-square flex items-center justify-center">
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.1)_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
+
+            <div className="relative w-full max-w-sm">
+                <div className="absolute top-0 right-0 -mr-4 -mt-4">
+                    <div className="px-3 py-1 bg-indigo-600 text-white text-xs font-bold rounded-full shadow-lg">Cloud Sync</div>
+                </div>
+
                 <div className="grid grid-cols-2 gap-4">
-                    <div><div className="flex items-center gap-2 text-xs text-gray-500 mb-1"><span className="w-2 h-2 rounded-full bg-indigo-500"></span>Daily payment</div><div className="font-bold">55%</div></div>
-                    <div><div className="flex items-center gap-2 text-xs text-gray-500 mb-1"><span className="w-2 h-2 rounded-full bg-blue-400"></span>Hobby</div><div className="font-bold">20%</div></div>
+                    {/* Folder 1 */}
+                    <div className="bg-white p-4 rounded-2xl shadow-xl flex flex-col gap-3 hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600">
+                            <Folder className="w-5 h-5 fill-current" />
+                        </div>
+                        <div>
+                            <div className="font-bold text-gray-900">Work</div>
+                            <div className="text-xs text-gray-500">124 Contacts</div>
+                        </div>
+                    </div>
+                    {/* Folder 2 */}
+                    <div className="bg-white p-4 rounded-2xl shadow-xl flex flex-col gap-3 hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600">
+                            <Folder className="w-5 h-5 fill-current" />
+                        </div>
+                        <div>
+                            <div className="font-bold text-gray-900">Events</div>
+                            <div className="text-xs text-gray-500">45 Contacts</div>
+                        </div>
+                    </div>
+                    {/* Folder 3 */}
+                    <div className="bg-white p-4 rounded-2xl shadow-xl flex flex-col gap-3 hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-green-600">
+                            <Folder className="w-5 h-5 fill-current" />
+                        </div>
+                        <div>
+                            <div className="font-bold text-gray-900">Personal</div>
+                            <div className="text-xs text-gray-500">82 Contacts</div>
+                        </div>
+                    </div>
+                    {/* Add New */}
+                    <div className="border-2 border-dashed border-indigo-200 bg-indigo-50/50 p-4 rounded-2xl flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-indigo-50 transition-colors">
+                        <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-500 flex items-center justify-center font-bold text-lg">+</div>
+                        <div className="text-xs font-semibold text-indigo-400">New List</div>
+                    </div>
                 </div>
-                <button className="w-full mt-6 py-3 border rounded-xl text-sm font-bold text-gray-600 hover:bg-gray-50">View all activity →</button>
             </div>
         </div>
     )
 
-    if (type === 'growth') return (
-        <div className="bg-blue-300/20 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden aspect-square flex items-center justify-center">
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
-            <div className="bg-white rounded-[2rem] p-8 w-full max-w-sm shadow-xl relative z-10">
-                <h4 className="font-bold text-lg mb-6">Financial Growth</h4>
-                <div className="h-48 flex items-end justify-between gap-2 relative">
-                    {[40, 70, 50, 65, 45, 30, 80].map((h, i) => (
-                        <div key={i} className="w-full bg-indigo-500 rounded-t-lg" style={{ height: `${h}%` }}></div>
-                    ))}
-                    <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
-                        <path d="M0 150 L 50 120 L 100 80 L 150 100 L 200 60 L 250 130 L 300 40" fill="none" stroke="#22d3ee" strokeWidth="3" strokeLinecap="round" />
-                        <circle cx="200" cy="60" r="4" fill="white" stroke="#22d3ee" strokeWidth="2" />
-                        <rect x="180" y="20" width="40" height="24" rx="4" fill="#374151" />
-                        <text x="200" y="37" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">65%</text>
-                    </svg>
+    // 3. ACT Visual: Action Buttons / Connecting
+    if (type === 'act') return (
+        <div className="bg-purple-300/20 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden aspect-square flex items-center justify-center">
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
+
+            <div className="relative w-72 bg-white rounded-3xl shadow-2xl p-6 z-10">
+                {/* Profile Header */}
+                <div className="flex flex-col items-center mb-6">
+                    <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full p-1 mb-3">
+                        <div className="w-full h-full bg-white rounded-full p-1">
+                            <div className="w-full h-full bg-gray-100 rounded-full overflow-hidden">
+                                {/* Avatar Placeholder */}
+                                <svg className="w-full h-full text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">Sarah Connor</h3>
+                    <p className="text-sm text-gray-500">Product Manager</p>
                 </div>
-                <div className="flex justify-between mt-4 text-xs text-gray-400 font-medium"><span>C1</span><span>C2</span><span>C3</span><span>C4</span><span>C5</span><span>C6</span><span>C7</span></div>
+
+                {/* Instant Actions */}
+                <div className="grid grid-cols-3 gap-3">
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex flex-col items-center gap-2"
+                    >
+                        <div className="w-12 h-12 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center shadow-sm border border-green-100">
+                            <Phone className="w-5 h-5" />
+                        </div>
+                        <span className="text-[10px] font-bold text-gray-600">Call</span>
+                    </motion.button>
+
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex flex-col items-center gap-2"
+                    >
+                        <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shadow-sm border border-blue-100">
+                            <Mail className="w-5 h-5" />
+                        </div>
+                        <span className="text-[10px] font-bold text-gray-600">Email</span>
+                    </motion.button>
+
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex flex-col items-center gap-2"
+                    >
+                        <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-sm border border-purple-100">
+                            <Zap className="w-5 h-5" />
+                        </div>
+                        <span className="text-[10px] font-bold text-gray-600">Connect</span>
+                    </motion.button>
+                </div>
             </div>
         </div>
     )
 
-    if (type === 'security') return (
-        <div className="bg-blue-300/20 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden aspect-square flex items-center justify-center">
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
-            <div className="relative w-64 h-64 bg-blue-500 rounded-[3rem] shadow-2xl flex items-center justify-center overflow-hidden">
-                <div className="absolute top-0 w-full h-full bg-blue-400 rounded-[3rem] scale-90 opacity-50"></div>
-                <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-lg relative z-20 border-4 border-blue-600/30">
-                    <Fingerprint className="w-16 h-16 text-blue-500" strokeWidth={1.5} />
-                </div>
-                <div className="absolute top-0 w-full h-1/2 bg-blue-400/50 rounded-b-[4rem] backdrop-blur-sm z-10"></div>
-            </div>
-        </div>
-    )
     return null
 }

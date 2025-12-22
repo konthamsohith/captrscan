@@ -2,7 +2,7 @@
 
 export function CTA() {
     return (
-        <section className="py-20 px-4 bg-white">
+        <section id="download" className="py-20 px-4 bg-white">
             <div className="container mx-auto">
                 <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-[3rem] relative overflow-hidden text-center text-white py-24 px-6 md:px-20 h-[600px] flex flex-col items-center justify-start">
 
