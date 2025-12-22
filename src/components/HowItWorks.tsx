@@ -29,7 +29,7 @@ export function HowItWorks() {
                         <Settings className="w-3 h-3" /> How It Works
                     </div>
                     <h2 className="font-['Poppins'] font-normal text-4xl lg:text-[64px] lg:leading-[72px] text-[rgb(21,21,21)] tracking-tight">
-                        How Captra<br />
+                        How Captr<br />
                         <span className="text-[rgb(0,64,193)]">Can Help You</span>
                     </h2>
                 </div>
@@ -167,7 +167,7 @@ export function HowItWorks() {
                                                     <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
                                                         <span className="font-bold text-xs">AI</span>
                                                     </div>
-                                                    <span className="font-bold text-gray-900 text-sm">Captra Assistant</span>
+                                                    <span className="font-bold text-gray-900 text-sm">Captr Assistant</span>
                                                 </div>
                                             </div>
                                             <div className="flex-1 p-4 space-y-4">
